@@ -18,7 +18,7 @@ class ApnMigrationsGenerator < Rails::Generators::Base
   
   def create_migrations
     Dir.glob(File.join(File.dirname(__FILE__), 'templates', 'apn_migrations', '*.rb')).sort.each do |file|
-      filename = Pathname.new(file).basename.gsub(/^\d+_/, '')
+      filename = Pathname.new(file).basename.to_s.gsub(/^\d+_/, '')
       migration_template file, "db/migrate/#{filename}"
     end
   end
