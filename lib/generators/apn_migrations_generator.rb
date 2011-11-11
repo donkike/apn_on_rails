@@ -18,7 +18,7 @@ class ApnMigrationsGenerator < Rails::Generators::Base
   
   def create_migrations
     Dir.glob(File.join(File.dirname(__FILE__), 'templates', 'apn_migrations', '*.rb')).sort.each do |f|
-      migration_template f
+      migration_template f, "db/migrate"
     end
     # migration_template '001_create_apn_devices.rb', 'db/migrate/create_apn_devices.rb'
     # migration_template '002_create_apn_notifications.rb', 'db/migrate/create_apn_notifications.rb'
