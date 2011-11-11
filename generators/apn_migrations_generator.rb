@@ -1,10 +1,11 @@
-require 'rails_generator'
+require 'rails/generators/active_record'
 # Generates the migrations necessary for APN on Rails.
 # This should be run upon install and upgrade of the 
 # APN on Rails gem.
 # 
-#   $ ruby script/generate apn_migrations
-class ApnMigrationsGenerator < Rails::Generator::Base
+#   $ rails g apn_migrations
+class ApnMigrationsGenerator < Rails::Generators::Base
+  argument :name, :default => "migration"
   
   def manifest # :nodoc:
     record do |m|
