@@ -27,7 +27,7 @@ module ApnOnRails
       end
     end
     generators do
-      require File.join(root_path, 'lib/generators/apn_on_rails/apn_migrations_generator')
+      require File.join(root_path, 'lib/generators/apn_migrations_generator')
     end
   end
 end
