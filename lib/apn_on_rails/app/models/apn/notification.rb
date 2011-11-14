@@ -59,7 +59,7 @@ class APN::Notification < APN::Base
     end
     if self.custom_properties
       self.custom_properties.each do |key,value|
-        result["#{key}"] = value
+        result[key.to_s] = value
       end
     end
     result
